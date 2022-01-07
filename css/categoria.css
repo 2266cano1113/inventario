@@ -1,8 +1,90 @@
 
+h2{
+    color: antiquewhite;
+}
+h1{
+    text-align: center;
+}
 .categorias{
     width: 100%;
     height: 50vh;
     margin-top: 1rem;
     background-color: white;
     border-radius: 5px;
+    color: black;
+}
+.tarjetero{
+    width: 100%;
+    padding: 0 1rem;
+    max-height: 87%;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+.tarjetero::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+    border-radius: 10px;
+}
+
+.tarjetero::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.tarjetero::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--azulF)
+}
+.categorias button{
+    height: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: .4s;
+    border-radius: 5px;
+    padding: 0;
+    border: 0;
+}
+.categorias button:nth-child(2n+0) {
+    background-color: var(--azulF2);
+    width: 100%;
+}
+.categorias button:nth-child(2n+1) {
+    background-color: var(--azulF);
+    width: 100%;
+}
+.categorias button:nth-child(2n+1):hover{
+    box-shadow: var(--azulF) 0 0 1rem 1px;
+}
+.categorias button:nth-child(2n+0):hover{
+    box-shadow: var(--azulF2) 0 0 1rem 1px;
+}
+.tarjeta p{
+    margin: 0;
+}
+.modal-content{
+    margin-top: 50%;
+    color: black;
+    border: none;
+    box-shadow: black 0 0 1.5rem;
+}
+.modal-content a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 100%;
+    color: white;
+    font-size: 1.5rem;
+    background-color: var(--azulF);
+}
+.modal-body{
+    width: 100%;
 }
