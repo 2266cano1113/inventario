@@ -1,0 +1,12 @@
+:root{
+    --azul: rgb(14, 165, 211);
+    --azulF: rgb(12, 101, 126);
+    --fondo:rgb(7, 15, 17);
+    --azulBonito: rgb(98, 200, 218);
+    --verdeIcono:rgb(48, 161, 143);
+    --azulMedio: #ebfbff;
+    --azulMedioFuerte:#00b4d0;
+    --azulMedioClaro:#90dbff;
+    --grisBonito:rgba(214, 210, 210, 0.815);
+    --morado:rgb(71, 71, 150) ;
+}

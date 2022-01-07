@@ -1,8 +1,4 @@
-:root{
-    --azul: rgb(14, 165, 211);
-    --azulF: rgb(12, 101, 126);
-    --fondo:rgb(7, 15, 17);
-}
+
 body {
     width: 99%;
     height: 100vh;
@@ -10,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--fondo);
+    font-family: 'Nanum Gothic', sans-serif;
 }
 body div{
     width: 60%;
