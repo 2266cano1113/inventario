@@ -101,12 +101,11 @@
                                 <div class="modal-body">
 
                                     <form action="" method="post">
-                                        <input class="d-none" type="text" name="id" value="<?php echo $row['id']  ?>">
-                                        <h3 for="">Nombre de categoria</h3>
-                                        <input type="text" name="categoria" value="<?php echo $row['categoria'] ?>">
-                                        <!-- <input type="color" class="color" name="color" value="<?php echo $row['color'] ?>"> -->
+                                        <input class="d-none" type="text" name="id" value="<?php echo $producto['nombre']  ?>">
+                                        <h3 for="">Nombre</h3>
+                                        <input type="text" name="nombreEditar" value="<?php echo $producto['nombre'] ?>">
                                         <button>Guardar</button>
-                                        <a href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>
+                                        <a href="eliminarCategoria.php?id=<?php echo $producto['id'] ?>"><i class="bi bi-trash-fill"></i></a>
                                     </form>
                                 </div>
                             </div>
@@ -116,7 +115,8 @@
         </div>
     </div>
 
-    <script src="js/scriptProductos.php"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
