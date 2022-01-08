@@ -13,18 +13,69 @@ label, input, select {
 
 input, select {
     border-bottom: solid rgb(15, 99, 114) 2px;
+    height: 2.5rem;
 }
 select{
     height: 2.5rem;
 }
-.duo:nth-child(1) {
-    margin: 0;
-}
-.duo:nth-child(5) input{
-    border: none;
+.duo{
+    margin: 0!important;
 }
 .categorias{
     width: 100%;
     height: 15rem;
     background-color: white;
+}
+.contenido{
+    width: 100%;
+}
+form .contenido{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+textarea{
+    width: 100%;
+    resize: none;
+    height: 6rem;
+}
+span{
+    font-weight: bolder;
+}
+.listaProductos{
+    background-color: white;
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 5px;
+    height: 30vh;
+    padding: 1rem;
+}
+.listaProductos p:nth-child(1){
+    display: flex;
+    justify-content: space-around;
+}
+.listaProductos button{
+    text-decoration: none;
+    color: var(--azulF);
+    width: 100%;
+    border: none;
+    font-weight: 400;
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+}
+button span:nth-child(1),p span:nth-child(1){
+    width: 40%;
+}
+button span:nth-child(2),p span:nth-child(2){
+    width: 30%;
+}
+button span:nth-child(3),p span:nth-child(3){
+    width: 10%;
+}
+.archivito{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
 }

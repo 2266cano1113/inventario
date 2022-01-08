@@ -15,7 +15,7 @@ h1{
 }
 .tarjetero{
     width: 100%;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     max-height: 87%;
     border-radius: 5px;
     display: grid;
@@ -51,19 +51,12 @@ h1{
     padding: 0;
     border: 0;
 }
-.categorias button:nth-child(2n+0) {
+.categorias button {
     background-color: var(--azulF2);
     width: 100%;
 }
-.categorias button:nth-child(2n+1) {
-    background-color: var(--azulF);
-    width: 100%;
-}
-.categorias button:nth-child(2n+1):hover{
+.categorias button:hover{
     box-shadow: var(--azulF) 0 0 1rem 1px;
-}
-.categorias button:nth-child(2n+0):hover{
-    box-shadow: var(--azulF2) 0 0 1rem 1px;
 }
 .tarjeta p{
     margin: 0;
@@ -74,16 +67,30 @@ h1{
     border: none;
     box-shadow: black 0 0 1.5rem;
 }
+.modal-content form{
+    box-shadow: none;
+}
 .modal-content a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.6rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1rem;
     height: 2.6rem;
-    border-radius: 100%;
     color: white;
     font-size: 1.5rem;
     background-color: var(--azulF);
+}
+.color{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 .modal-body{
     width: 100%;

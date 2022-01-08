@@ -39,6 +39,21 @@
             header('Location:categoria.php?mensaje=ya existe esa categoria');
         }
     }
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+        $categoria = $_POST['categoria'];
+        $color = $_POST['color'];
+
+        $update = "UPDATE categoria set categoria = '$categoria', color = '$color' WHERE id = $id";
+        if (mysqli_query($conn, $update)) {
+            $_SESSION['message'] = 'Registro actualizado exitosamente';
+            $_SESSION['message_+type'] = 'info';
+            header('Location:categoria.php');
+        } else {
+            echo 'no se pudo actualizar';
+            echo $color;
+        }
+    }
     ?>
     <div>
         <h2><?php echo $mensaje ?></h2>
@@ -56,28 +71,35 @@
                 while ($row = mysqli_fetch_array($result)) {
 
                     $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-                
+
                     $password = '';
                     $limite = strlen($cadena_base) - 1;
-                
-                    for ($i=0; $i < 10; $i++){
-                    $password .= $cadena_base[rand(1, $limite)];
-                }
+
+                    for ($i = 0; $i < 10; $i++) {
+                        $password .= $cadena_base[rand(1, $limite)];
+                    }
                 ?>
-                    <button data-bs-toggle="modal" data-bs-target="#<?php echo $password?>">
+                    <button data-bs-toggle="modal" data-bs-target="#<?php echo $password ?>">
+                        <!-- style="background-color:<?php echo $row['color'] ?>;" -->
                         <p><?php echo $row['categoria'] ?></p>
-                        <div class="modal fade" id="<?php echo $password ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <h3><?php echo $row['categoria'] ?></h3>
+                    </button>
+                    <div class="modal fade" id="<?php echo $password ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+
+                                    <form action="categoria.php" method="post">
+                                        <input class="d-none" type="text" name="id" value="<?php echo $row['id']  ?>">
+                                        <h3 for="">Nombre de categoria</h3>
+                                        <input type="text" name="categoria" value="<?php echo $row['categoria'] ?>">
+                                        <!-- <input type="color" class="color" name="color" value="<?php echo $row['color'] ?>"> -->
+                                        <button>Guardar</button>
                                         <a href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>
-                                        <a href="editarCategoria.php?id=<?php echo $row['id'] ?>&accion=1"><i class="bi bi-pencil-fill"></i></a>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </div>
                 <?php } ?>
             </div>
         </div>
