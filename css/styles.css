@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-
-=======
 :root{
     --azul: rgb(14, 165, 211);
     --azulF: rgb(12, 101, 126);
     --azulF2: rgb(11, 133, 167);
     --fondo:rgb(7, 15, 17);
 }
->>>>>>> bfe6226521476508db51857b873744c35c6fb4ca
 body {
     width: 99%;
     height: 100vh;
