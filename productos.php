@@ -101,9 +101,10 @@
                                 <div class="modal-body">
 
                                     <form action="" method="post">
-                                        <input class="d-none" type="text" name="id" value="<?php echo $producto['nombre']  ?>">
+                                        <input class="d-none" type="text" name="id" value="<?php echo $producto['id']  ?>">
                                         <h3 for="">Nombre</h3>
                                         <input type="text" name="nombreEditar" value="<?php echo $producto['nombre'] ?>">
+                                        <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                                         <button>Guardar</button>
                                         <a href="eliminarCategoria.php?id=<?php echo $producto['id'] ?>"><i class="bi bi-trash-fill"></i></a>
                                     </form>
@@ -114,7 +115,7 @@
             <?php } ?>
         </div>
     </div>
-
+ 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>

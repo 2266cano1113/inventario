@@ -80,3 +80,16 @@ button span:nth-child(3),p span:nth-child(3){
     -webkit-box-pack: end;
     -ms-flex-pack: end;
 }
+.modal-content div{
+    
+}
+.modal-content form{
+    box-shadow: none;
+    width: 100%;
+}
+.modal-content button{
+    color: white;
+}
+form img{
+    border-radius: 5px;
+}
