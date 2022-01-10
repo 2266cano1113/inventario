@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/productos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
-
+<?php
+        include("header.php");
+    ?>
 <body>
     <?php
     include('conexion.php');
@@ -32,7 +36,6 @@
     <div class="contenedor">
         <form action="guardarProduct.php" method="post" enctype="multipart/form-data">
             <div class="contenido">
-
                 <div class="duo">
                     <label for="">Categoria: <span><?php echo $categoria ?></span></label>
                     <select class="form-select" name="" aria-label="Default select" value="<?php echo $categoria ?>" onchange="location = this.value;">
@@ -63,14 +66,14 @@
                 <input type="text" class="d-none" name="categoria" value="<?php echo $idCategoria ?>">
                 <div class="duo">
                     <label for="">Foto:</label>
-                    <input type="file" name="image" accept="image/*" class="archivito" placeholder="Elige imagen">
+                    <input class="" type="file" name="image" accept="image/*" class="archivito" placeholder="Elige imagen">
                 </div>
             </div>
             <div class="duo">
                 <label for="">Descripción:</label>
                 <textarea name="descripcion" type="text"></textarea>
             </div>
-            <button type="submit">Guardar</button>
+            <button class="btn" type="submit">Guardar</button>
         </form>
 
         <div class="listaProductos">
@@ -125,6 +128,9 @@
         </div>
     </div>
 
+    <?php
+        include("footer.php");
+    ?>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
