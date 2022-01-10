@@ -4,13 +4,8 @@
     --azulF2: rgb(11, 133, 167);
     --fondo:rgb(7, 15, 17);
 }
-<<<<<<< HEAD
-body {
-    width: 100%;
-=======
 /* body {
     width: 99%;
->>>>>>> 383042c4d63b2519c729e456e88d5b439e75fba7
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -129,7 +124,7 @@ header .navMovil i{
         align-items: center;
 
     }
-   header h1{
+    header h1{
         font-size: 25px;
         /* margin-left: 30px; */
     }
@@ -167,7 +162,7 @@ footer i{
         border-top: solid 4px var(--azulMedioFuerte);   
         
 }
- footer p{
+footer p{
     margin-top: 20px;
 
 }
