@@ -81,15 +81,16 @@ button span:nth-child(3),p span:nth-child(3){
     -ms-flex-pack: end;
 }
 .modal-content div{
-    
-}
-.modal-content form{
-    box-shadow: none;
     width: 100%;
 }
-.modal-content button{
-    color: white;
+.modal-content{
+    width: 100%;
+}
+.imagen{
+    width: 100%;
+    text-align: center;
 }
 form img{
     border-radius: 5px;
+    margin: 1rem auto 0 auto;
 }

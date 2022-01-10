@@ -75,47 +75,55 @@
         <div class="listaProductos">
             <p><span>Nombre</span> <span>Categoria</span> <span>Stock</span></p>
             <?php
-            $query = "SELECT * FROM producto ORDER BY nombre";
-            $result = mysqli_query($conn, $query);
-            while ($producto = mysqli_fetch_array($result)) {
-                $idCategoria = $producto['categoria'];
-                $query2 = "SELECT * FROM categoria WHERE id = $idCategoria";
-                $result2 = mysqli_query($conn, $query2);
-                $categoria = mysqli_fetch_array($result2);
-                
-                $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                $query = "SELECT * FROM producto ORDER BY nombre";
+                $result = mysqli_query($conn, $query);
+                while ($producto = mysqli_fetch_array($result)) {
+                    $idCategoria = $producto['categoria'];
+                    $query2 = "SELECT * FROM categoria WHERE id = $idCategoria";
+                    $result2 = mysqli_query($conn, $query2);
+                    $categoria = mysqli_fetch_array($result2);
 
-                $password = '';
-                $limite = strlen($cadena_base) - 1;
+                    $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
-                for ($i = 0; $i < 10; $i++) {
-                    $password .= $cadena_base[rand(1, $limite)];
-                }
+                    $password = '';
+                    $limite = strlen($cadena_base) - 1;
+                    
+                    for ($i = 0; $i < 10; $i++) {
+                        $password .= $cadena_base[rand(1, $limite)];
+                    }
             ?>
                 <p>
                     <button data-bs-toggle="modal" data-bs-target="#<?php echo $password ?>"><span><?php echo $producto['nombre'] ?></span> <span><?php echo $categoria['categoria'] ?></span> <span><?php echo $producto['cantidad'] ?></span></button>
                 </p>
-                    <div class="modal fade" id="<?php echo $password ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body">
-
-                                    <form action="" method="post">
-                                        <input class="d-none" type="text" name="id" value="<?php echo $producto['id']  ?>">
-                                        <h3 for="">Nombre</h3>
-                                        <input type="text" name="nombreEditar" value="<?php echo $producto['nombre'] ?>">
-                                        <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
-                                        <button>Guardar</button>
-                                        <a href="eliminarCategoria.php?id=<?php echo $producto['id'] ?>"><i class="bi bi-trash-fill"></i></a>
-                                    </form>
+                <div class="modal fade" id="<?php echo $password ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3 for="">Nombre</h3>
+                                <label for="">Producto: <?php echo $producto['nombre'] ?></label>
+                                <?php
+                                $idddd = $producto['id'];
+                                $queryM = "SELECT * FROM categoria WHERE id = $idddd";
+                                $resultM = mysqli_query($conn, $queryM);
+                                $categoriaM = mysqli_fetch_array($resultM);
+                                ?>
+                                <label for="">Categoria: <?php echo $categoriaM['categoria'] ?></label>
+                                <label for="">Cantidad: <?php echo $producto['cantidad'] ?></label>
+                                <label for="">Descripción: </label>
+                                <p><?php echo $producto['descripcion'] ?></p>
+                                <div class="imagen">
+                                    <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                                 </div>
+                                <button>Guardar</button>
+                                <a href="eliminarCategoria.php?id=<?php echo $producto['id'] ?>"><i class="bi bi-trash-fill"></i></a>
                             </div>
                         </div>
                     </div>
+                </div>
             <?php } ?>
         </div>
     </div>
- 
+
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
