@@ -31,7 +31,7 @@
         $categoria = $infoCategoria['categoria'];
     }
 
-
+// jjjjjjjjj
     ?>
     <div class="contenedor">
         <form action="guardarProduct.php" method="post" enctype="multipart/form-data">
