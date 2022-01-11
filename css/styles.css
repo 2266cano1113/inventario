@@ -124,7 +124,7 @@ header .navMovil i{
         align-items: center;
 
     }
-   header h1{
+    header h1{
         font-size: 25px;
         /* margin-left: 30px; */
     }
@@ -162,7 +162,7 @@ footer i{
         border-top: solid 4px var(--azulMedioFuerte);   
         
 }
- footer p{
+footer p{
     margin-top: 20px;
 
 }

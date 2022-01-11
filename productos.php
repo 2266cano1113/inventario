@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <?php
         include("header.php");
@@ -117,8 +118,8 @@
                                 <div class="imagen">
                                     <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                                 </div>
-                                <button>Guardar</button>
-                                <a href="eliminarCategoria.php?id=<?php echo $producto['id'] ?>"><i class="bi bi-trash-fill"></i></a>
+                                <a href="economia.php?id=<?php echo $producto['id'] ?>">Ingresos</a>
+                                <a href="eliminarProducto.php?id=<?php echo $producto['id'] ?>">Eliminar<i class="bi bi-trash-fill"></i></a>
                             </div>
                         </div>
                     </div>
