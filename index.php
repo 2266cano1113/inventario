@@ -15,11 +15,14 @@
 </head>
 
 <body>
-     <?php
+    <?php
     include("conexion.php");
         include("header.php");
     ?>
     <main>
+                    <a href="productosG.php">
+                        <h2>General</h2>
+                    </a>
         <?php
                 $query = "SELECT * FROM categoria";
                 $result = mysqli_query($conn, $query);
