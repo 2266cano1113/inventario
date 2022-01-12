@@ -170,8 +170,7 @@ form img{
 }
 .modal-content a:hover{
     box-shadow: var(--azulF) 0 5px 10px;
-    background-image: linear-gradient( 156deg, var(--morado), var(--azulMedioFuerte));
-
+    /* background-image: linear-gradient( 156deg, var(--azul), var(--azulMedio)); */
 }
 
 .modal-body{

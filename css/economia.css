@@ -1,3 +1,11 @@
+.contenedor{
+    width: 100%;
+}
+.infoProducto{
+    width: 80%;
+    background-color: var(--azul);
+    
+}
 .lista p{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr;
