@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/economia.css">
 </head>
 
 <body>
     <?php
-
+    include("header.php");
     include("conexion.php");
     $id = 0;
 
@@ -58,6 +60,7 @@
     ?>
 
     <div class="contenedor">
+        <div class="infoProducto">
         <p for="">Producto: </p>
         <p><?php echo $producto['nombre'] ?></p>
         <p for="">Descripción</p>
@@ -66,6 +69,7 @@
         <p><?php echo $producto['cantidad'] ?></p>
         <div class="w-50">
             <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
+        </div>
         </div>
         <form action="economia.php" method="POST" class="mt-4">
             <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
@@ -90,6 +94,9 @@
                 <p><span>$<?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
             <?php } ?>
         </div>
+        <?php
+        include("footer.php");
+    ?>
     </div>
 </body>
 
