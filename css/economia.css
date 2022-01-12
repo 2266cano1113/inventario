@@ -1,0 +1,9 @@
+.lista p{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    gap: 1rem;
+}
+
+.lista p span{
+    background-color: var(--azul);
+}

@@ -8,12 +8,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/economia.css">
 </head>
 
 <body>
     <?php
 
     include("conexion.php");
+    $id = 0;
 
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
@@ -21,8 +23,6 @@
         $cantidadC = $_POST['cantidad'];
         $provedor = $_POST['provedor'];
         $fecha = $_POST['fecha'];
-
-        $pCompra = $pCompra / $cantidadC;
 
         $insert = "INSERT INTO historial (idProducto,fechaCompra,precioCompra,cantidadCompra,provedor)
         VALUES ($id,'$fecha',$pCompra,$cantidadC,'$provedor')";
@@ -57,7 +57,7 @@
 
     ?>
 
-    <div class="contenedor w-50">
+    <div class="contenedor">
         <p for="">Producto: </p>
         <p><?php echo $producto['nombre'] ?></p>
         <p for="">Descripción</p>
@@ -69,7 +69,7 @@
         </div>
         <form action="economia.php" method="POST" class="mt-4">
             <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
-            <label for="">Precio de : $</label>
+            <label for="">Precio de compra unit: $</label>
             <input class="form-control" type="number" name="pcompra" id="">
             <label for="">Cantidad de compra</label>
             <input class="form-control" type="number" name="cantidad" id="">
@@ -81,7 +81,14 @@
         </form>
 
         <div class="lista">
-            
+            <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
+            <?php
+            $query = "SELECT * FROM historial WHERE idProducto = $id order by fechaCompra DESC";
+            $result = mysqli_query($conn, $query);
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+                <p><span>$<?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
+            <?php } ?>
         </div>
     </div>
 </body>
