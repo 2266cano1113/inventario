@@ -4,6 +4,9 @@
     --azulF2: rgb(11, 133, 167);
     --fondo:rgb(7, 15, 17);
 }
+body{
+    text-transform: capitalize;
+}
 /* body {
     width: 99%;
     height: 100vh;

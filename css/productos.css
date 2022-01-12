@@ -11,7 +11,7 @@ label, input, select {
     border: none;
 }
 
-input, select {
+input{
     border-bottom: solid rgb(15, 99, 114) 2px;
     height: 2.5rem;
 }
@@ -20,6 +20,11 @@ select{
 }
 .duo{
     margin: 0!important;
+    display: flex;
+    padding-bottom: .5rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .categorias{
     width: 100%;
@@ -37,7 +42,6 @@ form .contenido{
 textarea{
     width: 100%;
     resize: none;
-    height: 6rem;
 }
 @media only screen and (max-width:768px){
   textarea{
@@ -174,10 +178,6 @@ form img{
 
 }
 
-.modal-body{
-    /* border: solid var(--azulF) 2px; */
-
-}
 .modal-content label,p {
     /* font-weight: bold; */
     color: var(--morado);

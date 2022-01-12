@@ -20,55 +20,16 @@
         include("header.php");
     ?>
     <main>
-        <div>
-            <h2>Laboratorio</h2>
-        </div>
-        <div>
-            <h2>Dental</h2>
-        </div>
-        <div>
-            <h2>Aseo</h2>
-        </div>
-
-        <div>
-            <h2>Aseo</h2>
-        </div>
-        <div>
-            <h2>Laboratorio</h2>
-        </div>
-        <div>
-            <h2>Dental</h2>
-        </div>
-        <div>
-            <h2>Aseo</h2>
-        </div>
-
-        <div>
-            <h2>Aseo</h2>
-        </div>
-        <div>
-            <h2>Aseo</h2>
-        </div>
-        <div>
-            <h2>Aseo</h2>
-        </div>
+        <?php
+                $query = "SELECT * FROM categoria";
+                $result = mysqli_query($conn, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                    <a href="productos.php?idCategoria=<?php echo $row['id'] ?>">
+                        <h2><?php echo $row['categoria'] ?></h2>
+                    </a>
+                <?php } ?>
     </main>
-    <!-- <footer> -->
-        <!-- <div>
-            <h5>Dental Esthetics</h5>
-        </div> -->
-        <!-- <div>
-            <p>Al cuidado de tu boca</p>
-
-        </div> -->
-        <!-- <div>
-            <h6>CLINICA DENTAL DE ESPECIALIDADES</h6>
-        </div> -->
-        <!-- <div>
-            <p>DENTAL ESTHETICS | TODOS LOS DERECHOS RESERVADOS | POLITICAS DE PRIVACIDAD</p>
-        </div>
-
-    </footer> -->
     <?php
         include("footer.php");
     ?>

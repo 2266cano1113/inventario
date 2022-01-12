@@ -75,5 +75,5 @@ if ($uploadOk == 0) {
     //     echo "Sorry, there was an error uploading your file.";
     // }
 }
-header('Location:productos.php');
+header('Location:productos.php?idCategoria='.$categoria);
 ?>
