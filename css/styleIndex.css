@@ -79,7 +79,7 @@ main{
 }
 main div{
     width: 100%;
-    height: 150px;
+    height: 180px;
     background-image: linear-gradient( 156deg, var(--azulMedioFuerte), var(--azulMedioClaro));
     border-radius: 5px;
     display: flex;
@@ -123,6 +123,7 @@ main div:hover h2{
 }
 footer{
     width: 100%;
+    
     background-color:var(--azulMedio);
     border-top: solid 4px var(--azulMedioFuerte);   
     text-align: center;
