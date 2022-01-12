@@ -31,7 +31,7 @@
         $categoria = $infoCategoria['categoria'];
     }
 
-// jjjjjjjjj
+
     ?>
     <div class="contenedor">
         <form action="guardarProduct.php" method="post" enctype="multipart/form-data">
@@ -66,7 +66,7 @@
                 <input type="text" class="d-none" name="categoria" value="<?php echo $idCategoria ?>">
                 <div class="duo">
                     <label for="">Foto:</label>
-                    <input class="" type="file" name="image" accept="image/*" class="archivito" placeholder="Elige imagen">
+                    <input class="input-file-input" type="file" name="image" accept="image/*" class="archivito" placeholder="Elige imagen">
                 </div>
             </div>
             <div class="duo">
@@ -103,7 +103,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <h3 for="">Nombre</h3>
+                                <h3 for="">Datos del Producto</h3>
                                 <label for="">Producto: <?php echo $producto['nombre'] ?></label>
                                 <?php
                                 $idddd = $producto['id'];
