@@ -59,6 +59,8 @@
 
     ?>
 
+<a class="flecha" href="productos.php?idCategoria=<?php echo $producto['categoria'] ?>"><i class="bi bi-arrow-left"></i></a>
+
     <div class="contenedor">
         <div class="nh">
             <div class="infoProducto">
@@ -68,7 +70,6 @@
                 <div>
                 <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                 </div>
-                
             </div>
             <form action="economia.php" method="POST">
                 <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
@@ -86,7 +87,7 @@
         <div class="lista">
             <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
             <?php
-            $query = "SELECT * FROM historial WHERE idProducto = $id order by fechaCompra DESC";
+            $query = "SELECT * FROM historial WHERE idProducto = $id order by id DESC";
             $result = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result)) {
             ?>

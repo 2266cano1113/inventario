@@ -2,10 +2,11 @@ body{
     width: 100%;
 }
 .contenedor{
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .8rem;
+    margin: 0 auto;
     padding: .5rem 1rem;
     height: calc(100vh - 200px);
 }
@@ -33,8 +34,7 @@ body{
 @media only screen and (max-width:768px){
     .contenedor .nh{
         grid-template-columns: 1fr;
-        height: calc(100vh - 100px);
-        
+        height: calc(100vh - 200px);
     }
 }
 .infoProducto p, label{
@@ -91,6 +91,20 @@ form button:hover{
     text-align: center;
     height: calc(100vh - 200px);
     overflow-y: scroll;
+}
+
+.lista::-webkit-scrollbar {
+    width: 5px;
+}
+
+.lista::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(119, 216, 255);
+    border-radius: 10px;
+}
+
+.listamain::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(0, 160, 209);
 }
 .lista p{
     display: grid;

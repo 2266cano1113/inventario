@@ -18,14 +18,14 @@
     include("header.php");
     include("conexion.php");
     $id = 0;
-    
+
 
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
         $cantidadC = -$_POST['cantidad'];
         $utilizo = $_POST['utilizo'];
 
-        $fecha = date("Y-m-d");   
+        $fecha = date("Y-m-d");
         // echo $fecha;
         $insert = "INSERT INTO historial (idProducto,fechaCompra,precioCompra,cantidadCompra,provedor)
         VALUES ($id,'$fecha',0,$cantidadC,'$utilizo')";
@@ -59,25 +59,26 @@
     $producto = mysqli_fetch_array($result);
 
     ?>
-    <a href="productos.php?idCategoria=<?php echo $producto['categoria'] ?>"><i class="bi bi-arrow-left"></i></a>
+    <a class="flecha" href="productos.php?idCategoria=<?php echo $producto['categoria'] ?>"><i class="bi bi-arrow-left"></i></a>
 
     <div class="contenedor">
         <div class="nh">
-        <div class="infoProducto">
-        <p for="">Producto: <?php echo $producto['nombre'] ?></p>
-        <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
-        <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
-            <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
-        
-        </div>
-        <form action="salidas.php" method="POST" class="mt-4">
-            <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
-            <label for="">Cantidad de usada:</label>
-            <input class="form-control" type="number" name="cantidad" id="">
-            <label for="">Utilizo:</label>
-            <input class="form-control" type="text" name="utilizo">
-            <button type="submit">Guardar</button>
-        </form>
+            <div class="infoProducto">
+                <p for="">Producto: <?php echo $producto['nombre'] ?></p>
+                <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
+                <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
+                <div>
+                    <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
+                </div>
+            </div>
+            <form action="salidas.php" method="POST">
+                <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
+                <label for="">Cantidad de usada:</label>
+                <input class="form-control" type="number" name="cantidad" id="">
+                <label for="">Utilizo:</label>
+                <input class="form-control" type="text" name="utilizo">
+                <button type="submit">Guardar</button>
+            </form>
         </div>
         <div class="lista">
             <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
@@ -89,9 +90,10 @@
                 <p><span>$<?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
             <?php } ?>
         </div>
-    </div>  
-        <?php
-        include("footer.php");
+    </div>
+    <?php
+    include("footer.php");
     ?>
 </body>
+
 </html>
