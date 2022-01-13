@@ -98,11 +98,12 @@ form button{
 .modal-content{
     margin-top: 50%;
     color: black;
-    border: none;
-    box-shadow: black 0 0 1.5rem;
-    border: 2px solid var(--verdeIcono);
-}
+    box-shadow: var(--azul) 0 5px 10px;
 
+}
+.modal-body{
+    width: 100%;
+}
 .modal-body form button, .modal-body form a{
     display: inline-flex;
     align-items: center;
@@ -117,7 +118,14 @@ form button{
     box-shadow: var(--azul) 0 5px 10px;
     
 }
-.color{
+.modal-body form{
+    width: 100%;
+}
+.modal-body form h3, .modal-body form input{
+    margin: 0 auto;
+    width: 100%;
+}
+/* .color{
     display: inline-block;
     width: 2rem;
     height: 2rem;
@@ -126,4 +134,4 @@ form button{
     padding: 0;
     margin: 0 auto;
     text-align: center;
-}
+} */
