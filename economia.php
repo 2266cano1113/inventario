@@ -60,30 +60,27 @@
     ?>
 
     <div class="contenedor">
+        <div class="nh">
         <div class="infoProducto">
-        <p for="">Producto: </p>
-        <p><?php echo $producto['nombre'] ?></p>
-        <p for="">Descripción</p>
-        <p><?php echo $producto['descripcion'] ?></p>
-        <label for="">Cantidad Actual</label>
-        <p><?php echo $producto['cantidad'] ?></p>
-        <div class="w-50">
+        <p for="">Producto: <?php echo $producto['nombre'] ?></p>
+        <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
+        <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
             <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
-        </div>
+        
         </div>
         <form action="economia.php" method="POST" class="mt-4">
             <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
             <label for="">Precio de compra unit: $</label>
             <input class="form-control" type="number" name="pcompra" id="">
-            <label for="">Cantidad de compra</label>
+            <label for="">Cantidad de compra:</label>
             <input class="form-control" type="number" name="cantidad" id="">
-            <label for="">Provedor</label>
+            <label for="">Proveedor:</label>
             <input class="form-control" type="text" name="provedor">
-            <label for="">Fecha compra</label>
+            <label for="">Fecha compra:</label>
             <input class="form-control" type="date" name="fecha" id="">
             <button type="submit">Guardar</button>
         </form>
-
+        </div>
         <div class="lista">
             <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
             <?php
@@ -94,10 +91,9 @@
                 <p><span>$<?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
             <?php } ?>
         </div>
+    </div>  
         <?php
         include("footer.php");
     ?>
-    </div>
 </body>
-
 </html>
