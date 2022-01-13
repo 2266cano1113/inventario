@@ -6,6 +6,7 @@
     padding: .5rem 1rem;
 }
 .contenedor .nh{
+    width: 100%;
     height: calc(100vh - 200px);
     display: grid;
     grid-template-columns: 1fr 1fr;
