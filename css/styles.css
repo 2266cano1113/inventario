@@ -149,6 +149,21 @@ header .navMovil i{
     transform: rotate(45deg);
     color: transparent;
     border-radius: 10rem 0;
+    animation-name: rayita;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-duration: alternate;
+}
+@keyframes rayita{
+    0%{
+        box-shadow: var(--azulF) 0 0 1rem; 
+    }
+    33%{
+        box-shadow: var(--azulF) 0 0 1.5rem;
+    }
+    66%{
+        box-shadow: var(--azulF) 0 0 2rem;  
+    }
 }
 .flecha i{
     transform: rotate(315deg);
@@ -175,21 +190,6 @@ footer{
     position: absolute;
     bottom: 0;
     box-shadow: var(--azulF) 0 0 .5rem;
-    animation-name: rayita;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-duration: alternate;
-}
-@keyframes rayita{
-    0%{
-        box-shadow: var(--azulF) 0 0 .5rem; 
-    }
-    33%{
-        box-shadow: var(--azulF) 0 0 1rem;
-    }
-    66%{
-        box-shadow: var(--azulF) 0 0 1.5rem;  
-    }
 }
 footer p{
     /* margin: 0; */
