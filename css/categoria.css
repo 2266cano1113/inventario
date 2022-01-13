@@ -83,7 +83,7 @@ form button{
     box-shadow: var(--azul) 0 5px 10px;
     font-size: 2rem;
 }
-.categorias button:hover{
+.categorias button:hover, .modal-body form a:hover{
     box-shadow: var(--azulF) 0 0 1.5rem 1px;
     color: var(--azulF);
 }
@@ -102,22 +102,8 @@ form button{
     box-shadow: black 0 0 1.5rem;
     border: 2px solid var(--verdeIcono);
 }
-.modal-content form{
-    box-shadow: none;
-}
-.modal-content a{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 1rem;
-    height: 2.6rem;
-    color: white;
-    font-size: 1.5rem;
-    background-color: var(--azulF);
-}
-.modal-body form button{
+
+.modal-body form button, .modal-body form a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +113,10 @@ form button{
     height: 2.6rem;
     color:white;
     font-size: 1.5rem;
-    background-color: var(--azulF);}
+    background-image: linear-gradient(156deg, var(--azulMedioFuerte), var(--azulMedioClaro));
+    box-shadow: var(--azul) 0 5px 10px;
+    
+}
 .color{
     display: inline-block;
     width: 2rem;
@@ -137,7 +126,4 @@ form button{
     padding: 0;
     margin: 0 auto;
     text-align: center;
-}
-.modal-body{
-    width: 100%;
 }
