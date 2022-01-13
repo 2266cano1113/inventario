@@ -8,12 +8,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/categoria.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 
 <body>
     <?php
+    include("header.php");
     include("conexion.php");
 
     $mensaje = '';
@@ -55,6 +57,7 @@
         }
     }
     ?>
+    <a class="flecha" href="index.php">Atras</a>
     <div>
         <h2><?php echo $mensaje ?></h2>
         <form action="categoria.php" method="post">
@@ -93,7 +96,7 @@
                                         <h3 for="">Nombre de categoria</h3>
                                         <input type="text" name="categoria" value="<?php echo $row['categoria'] ?>">
                                         <!-- <input type="color" class="color" name="color" value="<?php echo $row['color'] ?>"> -->
-                                        <button>Guardar</button>
+                                        <button class="btn-" >Guardar</button>
                                         <a href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>
                                     </form>
                                 </div>
@@ -104,6 +107,9 @@
             </div>
         </div>
     </div>
+    <?php
+    include("footer.php");
+    ?>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
