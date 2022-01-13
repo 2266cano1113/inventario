@@ -96,8 +96,8 @@
                                         <h3 for="">Nombre de categoria</h3>
                                         <input type="text" name="categoria" value="<?php echo $row['categoria'] ?>">
                                         <!-- <input type="color" class="color" name="color" value="<?php echo $row['color'] ?>"> -->
-                                        <button class="btn-" >Guardar</button>
-                                        <a href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>
+                                        <button class="btn-modal" >Guardar</button>
+                                        <a class="btn-modal" href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>
                                     </form>
                                 </div>
                             </div>
