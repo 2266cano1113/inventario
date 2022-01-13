@@ -1,45 +1,78 @@
+body{
+    width: 100%;
+}
 .contenedor{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .8rem;
     padding: .5rem 1rem;
+    height: calc(100vh - 200px);
+}
+@media only screen and (max-width:768px){
+    .contenedor{
+        width: 100%;
+        display: grid;
+        grid-template-columns:1fr;
+        gap: .8rem;
+        padding: .5rem 1rem;
+        overflow-y: scroll;
+    }
 }
 .contenedor .nh{
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(90vh - 200px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: solid var(--azulBonito) 2px;
+    border-radius: 5px;
     margin: 1rem auto;
-
+    height: calc(100vh - 200px);
+    padding: .5rem;
 }
-.infoProducto{
-    /* text-align: center; */
-    margin-left: 1rem;
+@media only screen and (max-width:768px){
+    .contenedor .nh{
+        grid-template-columns: 1fr;
+        height: calc(100vh - 100px);
+        
+    }
 }
 .infoProducto p, label{
 color: black;
 margin-top: 1rem;
 }
 .infoProducto img{
-    height: 5rem;
+    width: 80%;
     margin: 0 auto;
     
+}
+@media only screen and (max-width:768px){
+    .infoProducto div{
+        width: 100%;
+        text-align: center
+        ;
+    }
+    .infoProducto img{
+        width: auto;
+        display: inline-block;
+        height: 6rem;
+        margin:  0 auto;
+    }
 }
 /* form{
     border: solid var(--azulBonito) 2px;
 } */
 form label{
     font-weight: bold;
-    padding:.5rem;
 }
 form button{
-    width: 100%;
+    width: 90%;
     background-color:var(--azulBonito)!important;
     color: white;
     border: none;
-    border-radius: 5px ;
+    border-radius: 10px ;
+    margin-top:1rem;
+    margin-left: 1rem;
 
 }
 form button:hover{
@@ -54,12 +87,17 @@ form button:hover{
     width: 100%;
     margin: 1rem auto;
     border: solid var(--azulBonito) 2px;
+    border-radius: 5px;
     text-align: center;
+    height: calc(100vh - 200px);
+    overflow-y: scroll;
 }
 .lista p{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr;
     gap: 1rem;
+    background-color: var(--grisBonito);
+
 }
 
 .lista p:nth-child(1){
@@ -67,6 +105,6 @@ background-color:var(--azulBonito);
 font-weight: bold;
 color: var(--morado);
 }
-/* .lista p:nth-child(even){
-background-color: rgb(107, 26, 26);
+/* .lista p:nth-child(n) span{
+background-color: var(--grisBonito);
 } */

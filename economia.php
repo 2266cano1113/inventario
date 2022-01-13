@@ -61,25 +61,27 @@
 
     <div class="contenedor">
         <div class="nh">
-        <div class="infoProducto">
-        <p for="">Producto: <?php echo $producto['nombre'] ?></p>
-        <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
-        <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
-            <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
-        
-        </div>
-        <form action="economia.php" method="POST" class="mt-4">
-            <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
-            <label for="">Precio de compra unit: $</label>
-            <input class="form-control" type="number" name="pcompra" id="">
-            <label for="">Cantidad de compra:</label>
-            <input class="form-control" type="number" name="cantidad" id="">
-            <label for="">Proveedor:</label>
-            <input class="form-control" type="text" name="provedor">
-            <label for="">Fecha compra:</label>
-            <input class="form-control" type="date" name="fecha" id="">
-            <button type="submit">Guardar</button>
-        </form>
+            <div class="infoProducto">
+                <p for="">Producto: <?php echo $producto['nombre'] ?></p>
+                <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
+                <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
+                <div>
+                <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
+                </div>
+                
+            </div>
+            <form action="economia.php" method="POST">
+                <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
+                <label for="">Precio de compra unit: $</label>
+                <input class="form-control" type="number" name="pcompra" id="">
+                <label for="">Cantidad de compra:</label>
+                <input class="form-control" type="number" name="cantidad" id="">
+                <label for="">Proveedor:</label>
+                <input class="form-control" type="text" name="provedor">
+                <label for="">Fecha compra:</label>
+                <input class="form-control" type="date" name="fecha" id="">
+                <button type="submit">Guardar</button>
+            </form>
         </div>
         <div class="lista">
             <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
