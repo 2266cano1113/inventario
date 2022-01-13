@@ -3,14 +3,12 @@
     width: 100%;
     margin: 1rem 0 0 0;
 }
-
 label, input, select {
     width: 100%;
     display: inline-block;
     height: 2rem;
     border: none;
 }
-
 input{
     border-bottom: solid rgb(15, 99, 114) 2px;
     height: 2.5rem;
@@ -30,6 +28,10 @@ select{
     width: 100%;
     height: 15rem;
     background-color: white;
+}
+.contenedor{
+    width: 80%;
+    margin: 0 auto;
 }
 .contenido{
     width: 100%;
@@ -71,7 +73,6 @@ span{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgb(0, 160, 209);
 }
-
 .listaProductos p:nth-child(1){
     display: flex;
     justify-content: space-around;
@@ -104,7 +105,6 @@ button span:nth-child(3),p span:nth-child(3){
 .modal-content div{
     width: 100%;
     color: black;
-    
 }
 .modal-content{
     width: 100%;
@@ -119,6 +119,7 @@ form{
     border: solid var(--azulBonito) 2px;
     margin: 2rem auto 0  auto;
     padding: 10px;
+    border-radius: 5px;
 }
 @media only screen and (max-width:768px){
     form{
@@ -154,7 +155,6 @@ form img{
     color: white!important;
     margin-bottom: 20px!important;
 }
-
 @media only screen and (max-width:768px){
     .listaProductos{
         height: 320px;
@@ -182,7 +182,6 @@ form img{
     box-shadow: var(--azulF) 0 5px 10px;
     /* background-image: linear-gradient( 156deg, var(--azul), var(--azulMedio)); */
 }
-
 .modal-content label,p {
     /* font-weight: bold; */
     color: var(--morado);
@@ -197,7 +196,6 @@ form img{
     margin-left: 1rem;
     font-size: 1.3rem;
 }
-
 body > div > div > p:nth-child(1) span{
     color: var(--azul);
 }

@@ -49,7 +49,7 @@
             </div>
             <div class="duo">
                 <label for="">Descripción:</label>
-                <textarea name="descripcion" type="text"></textarea>
+                <textarea name="descripcion" required type="text"></textarea>
             </div>
             <button class="btn" type="submit">Guardar</button>
         </form>

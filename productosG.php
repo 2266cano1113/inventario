@@ -55,13 +55,12 @@
                 </div>
                 <div class="duo">
                     <label for="">Nombre:</label>
-                    <input name="nombre" type="text">
+                    <input name="nombre" required type="text">
                 </div>
                 <div class="duo">
                     <label for="">Cantidad Actual:</label>
-                    <input type="number" name="cantidad" id="">
+                    <input type="number" name="cantidad" required id="">
                 </div>
-
                 <input type="text" class="d-none" name="categoria" value="<?php echo $idCategoria ?>">
                 <div class="duo">
                     <label for="">Foto:</label>
@@ -70,11 +69,10 @@
             </div>
             <div class="duo">
                 <label for="">Descripción:</label>
-                <textarea name="descripcion" type="text"></textarea>
+                <textarea name="descripcion" required type="text"></textarea>
             </div>
             <button class="btn" type="submit">Guardar</button>
         </form>
-
         <div class="listaProductos">
             <p><span>Nombre</span> <span>Categoria</span> <span>Stock</span></p>
             <?php
@@ -85,15 +83,18 @@
                     $query2 = "SELECT * FROM categoria WHERE id = $idCategoria";
                     $result2 = mysqli_query($conn, $query2);
                     $categoria = mysqli_fetch_array($result2);
-
                     $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
                     $password = '';
                     $limite = strlen($cadena_base) - 1;
-                    
                     for ($i = 0; $i < 10; $i++) {
                         $password .= $cadena_base[rand(1, $limite)];
                     }
+
+                    $idddd = $producto['id'];
+                    $queryM = "SELECT * FROM categoria WHERE id = $idddd";
+                    $resultM = mysqli_query($conn, $queryM);
+                    $categoriaM = mysqli_fetch_array($resultM);
+
             ?>
                 <p>
                     <button data-bs-toggle="modal" data-bs-target="#<?php echo $password ?>"><span><?php echo $producto['nombre'] ?></span> <span><?php echo $categoria['categoria'] ?></span> <span><?php echo $producto['cantidad'] ?></span></button>
@@ -104,12 +105,7 @@
                             <div class="modal-body">
                                 <h3 for="">Datos del Producto</h3>
                                 <label for="">Producto: <?php echo $producto['nombre'] ?></label>
-                                <?php
-                                $idddd = $producto['id'];
-                                $queryM = "SELECT * FROM categoria WHERE id = $idddd";
-                                $resultM = mysqli_query($conn, $queryM);
-                                $categoriaM = mysqli_fetch_array($resultM);
-                                ?>
+                                <?php echo $idddd; ?>
                                 <label for="">Categoria: <?php echo $categoriaM['categoria'] ?></label>
                                 <label for="">Cantidad: <?php echo $producto['cantidad'] ?></label>
                                 <label for="">Descripción: </label>
@@ -126,12 +122,7 @@
             <?php } ?>
         </div>
     </div>
-
-    <?php
-        include("footer.php");
-    ?>
+    <?php include("footer.php"); ?>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

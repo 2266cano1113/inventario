@@ -175,6 +175,21 @@ footer{
     position: absolute;
     bottom: 0;
     box-shadow: var(--azulF) 0 0 .5rem;
+    animation-name: rayita;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-duration: alternate;
+}
+@keyframes rayita{
+    0%{
+        box-shadow: var(--azulF) 0 0 .5rem; 
+    }
+    33%{
+        box-shadow: var(--azulF) 0 0 1rem;
+    }
+    66%{
+        box-shadow: var(--azulF) 0 0 1.5rem;  
+    }
 }
 footer p{
     /* margin: 0; */
