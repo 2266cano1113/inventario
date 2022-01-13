@@ -32,6 +32,9 @@
                         <h2><?php echo $row['categoria'] ?></h2>
                     </a>
                 <?php } ?>
+                    <a href="categoria.php">
+                        <h2><i class="bi bi-plus-circle"></i></h2>
+                    </a>
     </main>
     <?php
         include("footer.php");

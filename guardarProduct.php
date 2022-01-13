@@ -20,7 +20,7 @@ if (isset($_POST['nombre'])) {
         echo "El registro no se pudo guardar" . mysqli_error($conn);
     }
 }
-
+ 
 $url = $_FILES["image"]["name"];
 $target_dir = "img/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);

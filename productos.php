@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/productos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <body>
     <?php
@@ -36,21 +35,21 @@
             <div class="contenido">
                 <div class="duo">
                     <label for="">Nombre:</label>
-                    <input name="nombre" type="text">
+                    <input name="nombre" type="text" required>
                 </div>
-                <div class="duo">
+                <!-- <div class="duo">
                     <label for="">Cantidad Actual:</label>
                     <input type="number" name="cantidad" id="">
-                </div>
+                </div> -->
                 <input type="text" class="d-none" name="categoria" value="<?php echo $idCategoria ?>">
                 <div class="duo">
                     <label for="">Foto:</label>
                     <input class="input-file-input" type="file" name="image" accept="image/*" class="archivito" placeholder="Elige imagen">
                 </div>
+            </div>
             <div class="duo">
                 <label for="">Descripción:</label>
                 <textarea name="descripcion" type="text"></textarea>
-            </div>
             </div>
             <button class="btn" type="submit">Guardar</button>
         </form>
@@ -89,8 +88,9 @@
                                 <div class="imagen">
                                     <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                                 </div>
-                                <a href="economia.php?id=<?php echo $producto['id'] ?>">Ingresos</a>
-                                <a href="eliminarProducto.php?id=<?php echo $producto['id'] ?>">Eliminar<i class="bi bi-trash-fill"></i></a>
+                                <a href="economia.php?id=<?php echo $producto['id'] ?>"><span>Ingresos<i class="bi bi-box-arrow-in-down"></i></span></a>
+                                <a href="salidas.php?id=<?php echo $producto['id'] ?>"><span>Salidas <i class="bi bi-box-arrow-up"> </i></span></a>
+                                <a href="eliminarProducto.php?id=<?php echo $producto['id'] ?>&idCategoria=<?php echo $idCategoria ?>"><span>Eliminar<i class="bi bi-trash"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,6 @@
             <?php } ?>
         </div>
     </div>
-
     <?php
         include("footer.php");
     ?>

@@ -12,6 +12,7 @@ header {
     align-items: center;
     background-color: var(--azulMedio);
     border-bottom: solid 4px var(--azulMedioFuerte);
+    box-shadow: var(--azulF) 0 0 .5rem;
 }
 
 header img {
@@ -33,7 +34,7 @@ h1 {
     color: rgb(71, 71, 150);
 }
 
-i {
+header i {
     color: var(--morado);
     font-size: 1.5rem;
 }
@@ -150,6 +151,7 @@ footer {
     align-items: center;
     position: absolute;
     bottom: 0;
+    box-shadow: var(--azulF) 0 0 .5rem;
 }
 
 p {
