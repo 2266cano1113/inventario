@@ -43,7 +43,7 @@
     }
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
-        $categoria = $_POST['categoria'];
+        $categoria = $_POST['categoriaE'];
         $color = $_POST['color'];
 
         $update = "UPDATE categoria set categoria = '$categoria', color = '$color' WHERE id = $id";
@@ -57,7 +57,7 @@
         }
     }
     ?>
-    <a class="flecha" href="index.php">Atras</a>
+    <a class="flecha" href="index.php"><i class="bi bi-arrow-left"></i></a>
     <div>
         <h2><?php echo $mensaje ?></h2>
         <form action="categoria.php" method="post">
@@ -94,7 +94,7 @@
                                     <form action="categoria.php" method="post">
                                         <input class="d-none" type="text" name="id" value="<?php echo $row['id']  ?>">
                                         <h3 for="">Nombre de categoria</h3>
-                                        <input type="text" name="categoria" value="<?php echo $row['categoria'] ?>">
+                                        <input type="text" name="categoriaE" value="<?php echo $row['categoria'] ?>">
                                         <!-- <input type="color" class="color" name="color" value="<?php echo $row['color'] ?>"> -->
                                         <button class="btn-modal" >Guardar</button>
                                         <a  class="btn-modal" href="eliminarCategoria.php?id=<?php echo $row['id'] ?>&accion=0"><i class="bi bi-trash-fill"></i></a>

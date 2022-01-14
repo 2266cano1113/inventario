@@ -24,7 +24,10 @@
         $pCompra = $_POST['pcompra'];
         $cantidadC = $_POST['cantidad'];
         $provedor = $_POST['provedor'];
-        $fecha = $_POST['fecha'];
+        date_default_timezone_set('UTC');
+
+        date_default_timezone_set("America/Mexico_City");
+        $fecha = date("Y-m-d");
 
         $insert = "INSERT INTO historial (idProducto,fechaCompra,precioCompra,cantidadCompra,provedor)
         VALUES ($id,'$fecha',$pCompra,$cantidadC,'$provedor')";
@@ -43,7 +46,7 @@
             $update = "UPDATE producto set cantidad = '$cantidadC' WHERE id = $id";
             mysqli_query($conn, $update);
 
-            header('Location:productos.php');
+            header('Location:economia.php?id='.$id);
         } else {
             echo "El registro no se pudo guardar" . mysqli_error($conn);
             // header('Location:productos.php');
@@ -79,8 +82,8 @@
                 <input class="form-control" type="number" name="cantidad" id="">
                 <label for="">Proveedor:</label>
                 <input class="form-control" type="text" name="provedor">
-                <label for="">Fecha compra:</label>
-                <input class="form-control" type="date" name="fecha" id="">
+                <!-- <label for="">Fecha compra:</label>
+                <input class="form-control" type="date" name="fecha" id=""> -->
                 <button type="submit">Guardar</button>
             </form>
         </div>

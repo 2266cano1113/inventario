@@ -26,10 +26,14 @@
         while ($row = mysqli_fetch_array($result)) {
             $producto = $row['idProducto'];
             $queryP = "SELECT * FROM producto WHERE id = $producto";
-            $resultP = mysqli_query($conn, $queryP);
-            $rowP = mysqli_fetch_array($resultP);
+            $nombreP = ' ';
+            if (mysqli_query($conn, $queryP)) {
+                $resultP = mysqli_query($conn, $queryP);
+                $rowP = mysqli_fetch_array($resultP);
+                $nombreP = $rowP['nombre'];
+            }
         ?>
-            <p> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $rowP['nombre']?></span> <span><?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
+            <p> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $nombreP?></span> <span><?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
         <?php } ?>
     </div>
 
