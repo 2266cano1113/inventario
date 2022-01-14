@@ -74,7 +74,7 @@
             <button class="btn" type="submit">Guardar</button>
         </form>
         <div class="listaProductos">
-            <p><span>Nombre</span> <span>Categoria</span> <span>Stock</span></p>
+            <p><span>Nombre</span> <span>Categoria</span> <span>Inventario</span></p>
             <?php
                 $query = "SELECT * FROM producto ORDER BY nombre";
                 $result = mysqli_query($conn, $query);
