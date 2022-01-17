@@ -37,7 +37,7 @@
             <div class="contenido">
                 <div class="duo">
                     <label for="">Categoria: <span><?php echo $categoria ?></span></label>
-                    <select class="form-select" name="" aria-label="Default select" value="<?php echo $categoria ?>" onchange="location = this.value;">
+                    <select class="form-select" name="" aria-label="Default select" value="<?php echo $categoria ?>" >
                         <option selected>Selecciona una catogoria</option>
                         <option value="categoria.php">Nueva Categoria
                         </option>
