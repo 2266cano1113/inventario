@@ -55,7 +55,7 @@
         </form>
 
         <div class="listaProductos">
-            <p><span>Nombre</span> <span>Categoria</span> <span>Stock</span></p>
+            <p><span>Nombre</span> <span>Categoria</span> <span>Inventario</span></p>
             <?php
                 $query = "SELECT * FROM producto WHERE categoria = $idCategoria ORDER BY nombre";
                 $result = mysqli_query($conn, $query);

@@ -31,8 +31,15 @@
     grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
     gap: 1rem;
     background-color: var(--grisBonito);
+}
+
+.lista p:hover{
+    box-shadow:rgb(163, 159, 159) 0 0 10px 3px;
+    border: solid 2px var(--azulBonito);
+
 
 }
+
 
 .lista p:nth-child(1){
 background-color:var(--azulBonito);

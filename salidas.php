@@ -81,7 +81,7 @@
             </form>
         </div>
         <div class="lista">
-            <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Provedor</span></p>
+            <p> <span>Precio C Unit.</span> <span>Cantidad</span> <span>Fecha</span><span>Empleado</span></p>
             <?php
             $query = "SELECT * FROM historial WHERE idProducto = $id order by id DESC";
             $result = mysqli_query($conn, $query);
