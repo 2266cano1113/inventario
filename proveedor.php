@@ -18,7 +18,7 @@
     include ("conexion.php");
     include ("header.php");
     if (isset($_POST['nombre'])){
-        $id = '';
+        $id = $_POST['id'];
         $nombre= $_POST['nombre'];
         $calle = $_POST['calle'];
         $num = $_POST['num'];
@@ -42,42 +42,87 @@
     <div class="contenedor">
         <h2>Datos del proveedor</h2>
         <form method="post" name="form" action="proveedor.php">
-        
+
             <div>
-            <label for="">Nombre:</label>
-            <input type="text" name="nombre" placeholder="" autocomplete="off" required>
+                <label for="">Id</label>
+                <input type="text" name="id" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Calle:</label>
-            <input type="text" name="calle" placeholder="" autocomplete="off" required>
+                <label for="">Nombre:</label>
+                <input type="text" name="nombre" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Num:</label>
-            <input type="number" name="num" placeholder="" autocomplete="off" required>
+                <label for="">Calle:</label>
+                <input type="text" name="calle" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Colonia:</label>
-            <input type="text" name="colonia" placeholder="" autocomplete="off" required>
+                <label for="">Num:</label>
+                <input type="number" name="num" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Ciudad:</label>
-            <input type="text" name="ciudad" placeholder="" autocomplete="off" required>
+                <label for="">Colonia:</label>
+                <input type="text" name="colonia" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Telefono:</label>
-            <input type="text" name="telefono" placeholder="" autocomplete="off" required>
+                <label for="">Ciudad:</label>
+                <input type="text" name="ciudad" placeholder="" autocomplete="off" required>
             </div>
             <div>
-            <label for="">Email:</label>
-            <input type="text" name="email" placeholder="" autocomplete="off" required>
+                <label for="">Telefono:</label>
+                <input type="text" name="telefono" placeholder="" autocomplete="off" required>
+            </div>
+            <div>
+                <label for="">Email:</label>
+                <input type="text" name="email" placeholder="" autocomplete="off" required>
             </div>
 
             <input class="boton" type="submit" name="enviar">
         </form>
     </div>
-    
 
-    <?php
+    <di class="contenedorTabla">
+        <table>
+            <thead>
+                <tr>
+                    <th class="">Id</th>
+                    <th class="">Nombre</th>
+                    <th class="">Direccion</th>
+                    <th class="">Telefono</th>
+                    <th class="">Email</th>
+                    <th class="">Opciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php 
+                                    include("conexion.php");
+                                    $query = "SELECT * FROM proveedor";
+                                    $result = mysqli_query($conn, $query);
+                                    while($row = mysqli_fetch_array($result)){ 
+                                    
+                                ?>
+                <tr>
+                    <td><?php echo $row['id']?></td>
+                    <td><?php echo $row['nombre'] . " "?></td>
+                    <td><?php echo $row['calle'] . " " . $row['num'] . " " . $row['colonia'] . " " . $row['ciudad'] ?>
+                    </td>
+                    <td><?php echo $row['telefono'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td>
+                        <a href="editarProveedor.php?id=<?php echo $row['id']?>">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a href="eliminarProveedor.php?id=<?php echo $row['id']?>">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                    </td>
+                </tr>
+                <?php } ?>
+
+            </tbody>
+        </table>
+        </div>
+        <?php
 include ("footer.php");
 ?>
 

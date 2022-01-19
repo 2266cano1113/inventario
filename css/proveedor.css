@@ -44,3 +44,18 @@ font-weight: bold;
         transition: .5s;
         color: var(--morado);
     }
+    
+    table{
+        width: 100%;
+        margin: 0 auto;
+        width: 70%;
+        border: solid 2px var(--azul);
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 1rem;
+       
+       
+    }
+    .form{
+        
+    }
