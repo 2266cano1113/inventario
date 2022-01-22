@@ -62,7 +62,8 @@
 
     ?>
 
-<a class="flecha" href="productos.php?idCategoria=<?php echo $producto['categoria'] ?>"><i class="bi bi-arrow-left"></i></a>
+    <a class="flecha" href="productos.php?idCategoria=<?php echo $producto['categoria'] ?>"><i
+            class="bi bi-arrow-left"></i></a>
 
     <div class="contenedor">
         <div class="nh">
@@ -71,19 +72,26 @@
                 <p for="">Descripción:<?php echo $producto['descripcion'] ?></p>
                 <p>Cantidad Actual: <?php echo $producto['cantidad'] ?></p>
                 <div>
-                <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
+                    <img class="img-fluid" src="img/<?php echo $producto['imagen'] ?>" alt="">
                 </div>
             </div>
             <form action="economia.php" method="POST">
                 <input type="number" class="d-none" name="id" value="<?php echo $id ?>" id="">
                 <label for="">Precio de compra unit: $</label>
-                <input class="form-control" type="number" name="pcompra" id="">
+                <input class="form-control" type="number" name="pcompra" id="" required>
                 <label for="">Cantidad de compra:</label>
-                <input class="form-control" type="number" name="cantidad" id="">
+                <input class="form-control" type="number" name="cantidad" id="" required>
                 <label for="">Proveedor:</label>
-                <input class="form-control" type="text" name="provedor">
-                <!-- <label for="">Fecha compra:</label>
-                <input class="form-control" type="date" name="fecha" id=""> -->
+                <!-- <input class="form-control" type="text" name="provedor"> -->
+                <select class="form-select form-control" name="provedor" aria-label="Default select example">
+                    <?php
+                    $query = "SELECT * FROM proveedor order by id DESC";
+                    $result = mysqli_query($conn, $query);
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <option value="<?php echo $row['nombre'] ?>"><?php echo $row['nombre'] ?></option>
+                    <?php } ?>
+                </select>
                 <button type="submit">Guardar</button>
             </form>
         </div>
@@ -93,13 +101,54 @@
             $query = "SELECT * FROM historial WHERE idProducto = $id order by id DESC";
             $result = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result)) {
+                
+                $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+                $password = '';
+                $limite = strlen($cadena_base) - 1;
+                
+                for ($i = 0; $i < 10; $i++) {
+                    $password .= $cadena_base[rand(1, $limite)];
+                }
             ?>
-                <p><span>$<?php echo $row['precioCompra'] ?></span> <span><?php echo $row['cantidadCompra'] ?></span> <span><?php echo $row['fechaCompra'] ?></span> <span><?php echo $row['provedor'] ?></span></p>
+            <p>
+                <span>$<?php echo $row['precioCompra'] ?></span>
+                <span><?php echo $row['cantidadCompra'] ?></span>
+                <span><?php echo $row['fechaCompra'] ?></span>
+                <span>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#<?php echo $password ?>">
+                        <?php echo $row['provedor'] ?>
+                    </button>
+                </span>
+            </p>
+            <!-- Modal -->
+            <div class="modal fade" id="<?php echo $password ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <?php
+                            $nombrePro = $row['provedor'];
+                                $queryPro = "SELECT * FROM proveedor WHERE nombre = '$nombrePro'";
+                                $resultPro = mysqli_query($conn, $queryPro);
+                                $rowPro = mysqli_fetch_array($resultPro);
+                            ?>
+                            <p><?php echo $rowPro['nombre'] . " "?></p>
+                            <p><?php echo $rowPro['calle'] . " " . $rowPro['num'] . " " . $rowPro['colonia'] . " " . $rowPro['ciudad'] ?>
+                            </p>
+                            <p><?php echo $rowPro['telefono'] ?></p>
+                            <p><?php echo $rowPro['email'] ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php } ?>
         </div>
-    </div>  
-        <?php
+    </div>
+    <?php
         include("footer.php");
     ?>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

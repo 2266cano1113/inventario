@@ -27,8 +27,8 @@
         $telefono = $_POST['telefono'];
         $email = $_POST['email'];
 
-        $insert = "INSERT INTO proveedor (id,nombre,calle,num,colonia,ciudad,telefono,email)
-        VALUES ('$id','$nombre','$calle','$num', '$colonia', '$ciudad', '$telefono', '$email')";
+        $insert = "INSERT INTO proveedor (nombre,calle,num,colonia,ciudad,telefono,email)
+        VALUES ('$nombre','$calle','$num', '$colonia', '$ciudad', '$telefono', '$email')";
     
         if (mysqli_query($conn,$insert)){
             $_SESSION['message'] = 'Registro guardado exitosamente';
@@ -43,9 +43,9 @@
         <h2>Datos del proveedor</h2>
         <form method="post" name="form" action="proveedor.php">
 
-            <div>
+            <div class="d-none">
                 <label for="">Id</label>
-                <input type="text" name="id" placeholder="" autocomplete="off" required>
+                <input type="text" name="id" value=" " placeholder="" autocomplete="off">
             </div>
             <div>
                 <label for="">Nombre:</label>
@@ -95,12 +95,12 @@
 
             <tbody>
                 <?php 
-                                    include("conexion.php");
-                                    $query = "SELECT * FROM proveedor";
-                                    $result = mysqli_query($conn, $query);
-                                    while($row = mysqli_fetch_array($result)){ 
-                                    
-                                ?>
+                    include("conexion.php");
+                    $query = "SELECT * FROM proveedor";
+                    $result = mysqli_query($conn, $query);
+                    while($row = mysqli_fetch_array($result)){ 
+                    
+                ?>
                 <tr>
                     <td><?php echo $row['id']?></td>
                     <td><?php echo $row['nombre'] . " "?></td>

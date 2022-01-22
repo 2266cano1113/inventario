@@ -59,21 +59,24 @@ margin-top: 1rem;
         margin:  0 auto;
     }
 }
-/* form{
-    border: solid var(--azulBonito) 2px;
-} */
+form{
+    display: flex;
+    flex-direction: column;
+
+}
 form label{
     font-weight: bold;
+    width: 100%;
 }
+
 form button{
     width: 90%;
+    height: 2.5rem;
     background-color:var(--azulBonito)!important;
     color: white;
     border: none;
     border-radius: 10px ;
-    margin-top:1rem;
-    margin-left: 1rem;
-
+    margin: 1rem auto 0 auto;
 }
 form button:hover{
     box-shadow: var(--azulF) 0 5px 10px;
@@ -92,7 +95,20 @@ form button:hover{
     height: calc(100vh - 200px);
     overflow-y: scroll;
 }
-
+.lista button{
+    width: 90%;
+    height: 2.5rem;
+    color: black;
+    border: none;
+    border-radius: 10px ;
+    margin: 0 auto;
+    background-color: transparent;
+}
+.lista button:hover{
+    /* box-shadow: var(--azulF) 0 5px 10px; */
+    background-color: transparent;
+    color: var(--azulF);
+}
 .lista::-webkit-scrollbar {
     width: 5px;
 }
@@ -122,3 +138,7 @@ color: var(--morado);
 /* .lista p:nth-child(n) span{
 background-color: var(--grisBonito);
 } */
+
+.modal-body p{
+    display: block;
+}
